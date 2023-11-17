@@ -5,6 +5,9 @@ import EventListener from './components/EventListener.vue'
 import FormBindings from './components/FormBindings.vue'
 import ConditionalRendering from './components/ConditionalRendering.vue'
 import ListRendering from './components/ListRendering.vue'
+import ComputedProperty from './components/ComputedProperty.vue'
+import LifecycleAndTemplateRefs from './components/LifecycleAndTemplateRefs.vue'
+import Watchers from './components/Watchers.vue'
 </script>
 
 <template>
@@ -36,6 +39,21 @@ import ListRendering from './components/ListRendering.vue'
 
         <h1>6. 리스트 렌더링</h1>
         <ListRendering></ListRendering>
+        
+        <br>
+
+        <h1>7. 계산된 속성(computed)</h1>
+        <ComputedProperty></ComputedProperty>
+        
+        <br>
+
+        <h1>8. 생명주기와 템플릿 참조</h1>
+        <LifecycleAndTemplateRefs></LifecycleAndTemplateRefs>
+        
+        <br>
+
+        <h1>9. 감시자(watch)</h1>
+        <Watchers></Watchers>
         
         
     </div>
