@@ -8,6 +8,13 @@ import ListRendering from './components/ListRendering.vue'
 import ComputedProperty from './components/ComputedProperty.vue'
 import LifecycleAndTemplateRefs from './components/LifecycleAndTemplateRefs.vue'
 import Watchers from './components/Watchers.vue'
+import Props from './components/Props.vue'
+import Emits from './components/Emits.vue'
+import Slots from './components/Slots.vue'
+
+const greeting = '부모 컴포넌트로부터 선물 전달!'
+let childMsg = '자식 컴포넌트로부터 아직 선물을 받지 못했어요ㅠ'
+const slotMsg = '부모로부터 템플릿 전달!'
 </script>
 
 <template>
@@ -54,8 +61,27 @@ import Watchers from './components/Watchers.vue'
 
         <h1>9. 감시자(watch)</h1>
         <Watchers></Watchers>
+
+        <br>
+
+        <h1>10. Props</h1>
+        <!-- 자식 컴포넌트에 데이터 전달 -->
+        <Props :msg="greeting"></Props>
+
+        <br>
+
+        <h1>11. Emits</h1>
+        <!-- 자식 컴포넌트로부터 데이터를 받아 childMsg 수정 -->
+        <Emits @response="(msg) => childMsg = msg"></Emits>
+        <p>{{ childMsg }}</p>
         
-        
+        <br>
+
+        <h1>12. Slots</h1>
+        <!-- Slot을 사용하여 자식 컴포넌트에 템플릿 조각 전달 -->
+        <Slots>
+            {{ slotMsg }}
+        </Slots>
     </div>
 
 </template>
